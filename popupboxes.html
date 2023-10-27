@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Up Boxes</title>
+</head>
+<body>
+<h1>Student Registration</h1>
+<form id="Sform">
+    Name: <input type="text" id="name" name="name"><br><br>
+    Email: <input type="email" id="email" name="email"><br><br>
+    Age: <input type="number" id="age" name="age"><br><br>
+    <button type="button" onclick="register()">Register</button>
+</form>
+<script>
+    function register(){
+        var name=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var age=document.getElementById("age").value;
+        if(name === "" || email === "" || age === ""){
+            alert("Please fill in the blanks")
+        }
+        else{
+            var confirmation = confirm ("Are you sure you want to register : " + name + " with email : " + email +" and Age : " + age + " years ? ");
+        if(confirmation){
+            var result = prompt("Student registration successful");
+            if(result === "OK"){
+                document.getElementById("Sform").reset();
+            }
+        }        }
+
+    }
+</script>
+    
+</body>
+</html>
